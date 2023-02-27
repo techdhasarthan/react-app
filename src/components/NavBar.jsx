@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import{HiSearch} from 'react-icons/hi'
 import { Routes,Route, NavLink } from 'react-router-dom'
-import Anime from './Anime'
+import Movies from './Movies'
 import Tv_Shows from './Tv_Shows'
 import Trending from './Trends'
 import Pricing from './Pricing'
@@ -13,23 +13,23 @@ function NavBar() {
     <Fragment>
         <nav className={toggle ? '' :'NavBarColor'}>
             <div className='nav_options'>
-              <h1 id = {toggle ? '' :'heading'}> Akastsuki</h1>
-                <NavLink to="/Anime" style={({isActive}) => {return {color:isActive ? "#fff" : '#0ed6e8'}}}>
-                <span id = {toggle ? 'Animes' :'AnimeLight'}>Anime</span>
+              <h1 id = {toggle ? '' :'heading'}>MovieInfo</h1>
+                <NavLink to="/Movies" style={({isActive}) => {return {color:isActive ? "#fff" : '#0ed6e8'}}}>
+                <span id = {toggle ? 'Moviess' :'MoviesLight'}>Movies</span>
                 </NavLink>
                
                 <NavLink to="/Tv_Shows" style={({isActive}) => {return {color:isActive ? "#fff" : '#0ed6e8'}}}>
-                <span id = {toggle ? 'Anime' :'AnimeLight'}>Tv_Shows</span>
+                <span id = {toggle ? 'Movies' :'MoviesLight'}>Tv_Shows</span>
                 </NavLink>
                 <NavLink to="/Trending" style={({isActive}) => {return {color:isActive ? "#fff" : '#0ed6e8'}}}>
-                <span id = {toggle ? 'Anime' :'AnimeLight'}>Trending</span>
+                <span id = {toggle ? 'Movies' :'MoviesLight'}>Trending</span>
                 </NavLink>
                 <NavLink to="/Pricing" style={({isActive}) => {return {color:isActive ? "#fff" : '#0ed6e8'}}}>
-                <span id = {toggle ? 'Anime' :'AnimeLight'}>Pricing</span>
+                <span id = {toggle ? 'Movies' :'MoviesLight'}>Pricing</span>
                 </NavLink>
             </div>
             <div className='input-group'>
-            <input type="text" placeholder='Search your fav Anime'/>
+            <input type="text" placeholder='Search your fav movies'/>
 
             <HiSearch fontSize={21} color="black" id='search'/>
             <div id="Color-switcher" onClick={() => setToggle(!toggle)}>
@@ -38,7 +38,7 @@ function NavBar() {
             </div>
         </nav>
         <Routes>
-          <Route path='Anime' element={<Anime /> }/>
+          <Route path='Movies' element={<Movies /> }/>
           <Route path='Tv_Shows' element={<Tv_Shows /> }/>
           <Route path='Trending' element={<Trending /> }/>
           <Route path='Pricing' element={<Pricing /> }/>
