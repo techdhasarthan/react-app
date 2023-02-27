@@ -1,12 +1,14 @@
 import React,{ Fragment,useContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import '../styles/videos.css'
 import {AiFillPlayCircle} from 'react-icons/ai'
 import NoImg from './NoImage.png'
 
 function Anime() {
   const [AnimeData,setAnimeData] = useState([])
-  const Api = 'https://api.themoviedb.org/3/movie/550?api_key=93fa04b3d14728f50673dbfa930c4d75/discover/movie'
-  const Images = 'https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg'
+  // const Api = 'https://api.themoviedb.org/3/movie/550?api_key=93fa04b3d14728f50673dbfa930c4d75/discover/movie'
+  const Api = "https://api.themoviedb.org/3/discover/movie"
+  const Images = 'https://image.tmdb.org/t/p/w500/'
   const AnimeCall = async () => {
     const data = await axios.get(Api,{
       params:{
@@ -15,7 +17,7 @@ function Anime() {
     })
     const results =data.data.results
     setAnimeData(results)
-
+    //  console.log(data.data.results);
     
   }
 useEffect(() => {
