@@ -2,9 +2,11 @@ import React,{ Fragment,useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import '../styles/videos.css'
 import {AiFillPlayCircle} from 'react-icons/ai'
+import { Container } from './NavBar'
 import NoImg from './NoImage.png'
 
 function Movies() {
+  const {toggle} = useContext(Container)
   const [moviesData,setMoviesData] = useState([])
   // const Api = 'https://api.themoviedb.org/3/movie/550?api_key=93fa04b3d14728f50673dbfa930c4d75/discover/movie'
   const Api = "https://api.themoviedb.org/3/discover/movie"
@@ -26,7 +28,7 @@ useEffect(() => {
 console.log(moviesData)
   return (
     <Fragment>
-      
+      <div></div>
       {moviesData.map((movie) => {
         return(
       <Fragment>
